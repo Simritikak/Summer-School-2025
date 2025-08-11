@@ -14,15 +14,12 @@ class btech{
 	public:
 		int roll;
 		float cgpa;
-
-		// Initilizer list		
-		btech(int r, float c): roll(r), cgpa(c){}
 		
-//		btech(int r, float c){
-//			
-//			roll = r;
-//			cgpa = c;
-//		}
+		btech(int r, float c){
+			
+			roll = r;
+			cgpa = c;
+		}
 		
 		void display(){
 			
@@ -35,8 +32,6 @@ class btech{
 int main(){
 	
 	btech aryan(1, 9.5);
-	
-	aryan.display();
 	
 	return 0;
 }

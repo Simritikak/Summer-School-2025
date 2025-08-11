@@ -22,19 +22,15 @@ void fprint(node* head){
 	}
 }
 
-
-void bprint(node* head){
-	
-	if( head == NULL )
-		return;
-	
-	bprint( head->next );
-	cout<< head->data <<" ";
-}
-
-void insertTail( node* head, int val){
+void insertTail( node* &head, int val){
 	
 	node* newnode = new node(val);
+	
+	if( head == NULL ){
+		
+		head = newnode;
+		return;
+	}
 	
 	node* temp = head;
 	while( temp->next != NULL )

@@ -15,7 +15,7 @@ class btech{
 
 int main(){
 	
-	btech john, hezal, noah;	// static allocation
+	btech vansh, riya, arjun;	// static allocation
 	
 	btech *s = new btech;		// dynamic allocation
 	

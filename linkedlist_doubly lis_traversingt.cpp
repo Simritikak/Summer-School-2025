@@ -17,7 +17,7 @@ void fprint(node* head){
 	
 	while( temp != NULL ){
 		
-		cout<<head->prev<<"\t" <<head->data <<"\t"<< head->next<<endl;
+		cout<<temp->data <<endl;
 		temp = temp->next;
 	}
 }
@@ -25,36 +25,36 @@ void fprint(node* head){
 
 void bprint(node* head){
 	
-	if( head == NULL )
-		return;
-	
-	bprint( head->next );
-	cout<< head->data <<" ";
-}
-
-void insertTail( node* head, int val){
-	
-	node* newnode = new node(val);
-	
 	node* temp = head;
 	while( temp->next != NULL )
 		temp = temp->next;
 	
-	newnode->prev = temp;	
-	temp->next = newnode;
+	while( temp != NULL ){
+		
+		cout<<temp->data <<endl;
+		temp = temp->prev;
+	}
 }
 
 int main(){
 	
-	node* head = new node(10);
+	node* n1 = new node(10);
 	
-	insertTail( head, 20 );
-	insertTail( head, 30 );
-	insertTail( head, 40 );
-	insertTail( head, 50 );
+	node* n2 = new node(20);
+	n1->next = n2;
+	n2->prev = n1;
 	
-	fprint( head );
+	node* n3 = new node(30);
+	n2->next = n3;
+	n3->prev = n2;
+	
+	node* n4 = new node(40);
+	n3->next = n4;
+	n4->prev = n3;
+	
+	fprint( n1 );
 	cout<<endl;
+	bprint( n1 );
 	
 	return 0;
 }
